@@ -17,6 +17,11 @@ a{
     text-decoration: none;
 }
 
+body, html {
+    max-width: 100vw;
+    overflow-x: auto;
+}
+
 body{
     font-family: 'Montserrat', sans-serif;
     background-color: #EFF1FA;
@@ -32,47 +37,35 @@ header{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.user-source{
-    margin: 0 auto;
-    padding: 1rem 2rem;
+main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-#source{
-    margin-top: 2rem;
-    display: inline-block;
-    width: 50%;
-    height: 500px;
-    padding: 1rem 2rem;
-    background-color: #F3F5FC;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.user-source, .user-destination{
+    padding: 1rem;
 }
 
-.user-destination{
-    margin: 0 auto;
-    padding: 1rem 2rem;
-}
-
-#destination{
-    margin-top: 2rem;
-    display: inline-block;
-    width: 50%;
-    height: 500px;
-    padding: 1rem 2rem;
-    background-color: #F3F5FC;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#source, #destination{
+    width: 100%;
+    height: 330px;
 }
 
 .user-actions{
-    display: block;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 6%;
-    margin-right: 2rem;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-button{
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  }
+.user-copy{
+    grid-column: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 
 #encriptar{
     display: inline-block;
@@ -92,12 +85,70 @@ button{
     border-radius: 12px;
 }
 
+#copy{
+    display: inline-block;
+    padding: 2rem 0;
+    width: 200px;
+    background-color: #0A3871;
+    color: #F3F5FC;
+    border-radius: 12px;
+}
+
+#encriptar, #desencriptar, #copy{
+    cursor: pointer;
+}
+
 footer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center;
     padding: 2rem 2rem;
     background-color: #0A3871;
     color: #EFF1FA;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .user-source {
+        order: 1;
+    }
+
+    .user-actions {
+        order: 2;
+    }
+
+    .user-actions, .user-copy {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .user-destination {
+        order: 3;
+    }
+
+    .user-copy {
+        order: 4;
+    }
+
+    #encriptar, #desencriptar, #copy {
+        width: 200px;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    header, footer {
+        padding: 1rem 5%;
+    }
+
+    #source, #destination {
+        height: 200px;
+    }
 }

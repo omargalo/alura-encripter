@@ -94,8 +94,30 @@ main{
     border-radius: 12px;
 }
 
+#copy:disabled {
+    background-color: #ADB5BD;
+    color: #F3F5FC;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#copy:disabled:hover {
+    background-color: #ADB5BD;
+    color: #F3F5FC;
+    box-shadow: none;
+}
+
 #encriptar, #desencriptar, #copy{
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#encriptar:hover, #desencriptar:hover, #copy:hover {
+    background-color: #F3F5FC;
+    color: #0A3871;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 footer{
@@ -106,6 +128,11 @@ footer{
     background-color: #0A3871;
     color: #EFF1FA;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.github{
+    text-decoration: none;
+    color: #EFF1FA;
 }
 
 @media (max-width: 768px) {

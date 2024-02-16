@@ -14,11 +14,13 @@ function decryptText(text) {
 document.getElementById('encriptar').addEventListener('click', function() {
     const sourceText = document.getElementById('source').value;
     document.getElementById('destination').value = encryptText(sourceText);
+    document.getElementById('copy').disabled = false;
 });
 
 document.getElementById('desencriptar').addEventListener('click', function() {
     const encryptedText = document.getElementById('source').value;
     document.getElementById('destination').value = decryptText(encryptedText);
+    document.getElementById('copy').disabled = false;
 });
 
 // Copiar al portapapeles

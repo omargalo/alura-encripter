@@ -15,12 +15,14 @@ document.getElementById('encriptar').addEventListener('click', function() {
     const sourceText = document.getElementById('source').value;
     document.getElementById('destination').value = encryptText(sourceText);
     document.getElementById('copy').disabled = false;
+    document.getElementById('monito').style.opacity = 0.1;
 });
 
 document.getElementById('desencriptar').addEventListener('click', function() {
     const encryptedText = document.getElementById('source').value;
     document.getElementById('destination').value = decryptText(encryptedText);
     document.getElementById('copy').disabled = false;
+    document.getElementById('monito').style.opacity = 0.1;
 });
 
 // Copiar al portapapeles
